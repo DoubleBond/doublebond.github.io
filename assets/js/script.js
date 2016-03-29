@@ -8,5 +8,11 @@ $(function(){
         typeSpeed: 0
     });
 
-    $(".current-year").html(new Date().getFullYear())
+    $(".current-year").html(new Date().getFullYear());
+
+    $(".scroll-to").click(function(event) {
+        $('html, body').animate({
+            scrollTop: $($(this).data("scrollTo")).offset().top
+        }, 1000);
+    });
 });
