@@ -1,0 +1,141 @@
+body, html{
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+}
+a, a:hover {
+    color: black;
+    text-decoration: none;
+}
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.my-name{
+    margin-top: 0;
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+.btn{
+    border-radius: 0 !important;
+}
+.btn-primary, .btn-primary:hover,
+.btn-primary:focus, .btn-primary:active{
+    border-radius: 0 !important;
+    background: #16a085;
+    border: none;
+}
+
+/*      Navbar      */
+.navbar-custom{
+    z-index: 9;
+    position: relative;
+    background-color: transparent;
+}
+.navbar-custom .navbar-toggle{
+    background-color: #F0F0F0;
+}
+@media (max-width: 768px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+/*      Section   */
+section{
+    padding-top: 35px;
+}
+/*      header      */
+header{
+    position: relative;
+    margin-top: -50px;
+    height: 100%;
+    background: url('../img/me.jpg') no-repeat center;
+    background-size: cover;
+}
+.center-message{
+    position: absolute;
+    margin: 0;
+    width: 320px;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*      Main        */
+main{
+    background-color: #ecf0f1;
+}
+/*      Skills      */
+.program-skill > h5{
+    text-align: center;
+}
+.program-skill .progress-bar{
+    background-color: #16a085;
+}
+.progress{
+    border-radius: 0 !important;
+    height: 25px;
+}
+.progress > .progress-bar{
+    line-height: 25px;
+}
+.level{
+    border-bottom: 1px dotted #16a085;
+    border-left: 1px dotted #16a085;
+}
+.level > .progress-bar{
+    color: black;
+    box-shadow: none;
+    background-color: #ecf0f1;
+    border-right: 1px dotted #16a085;
+}
+@media (min-width: 768px) {
+    #skill .col-sm-6:nth-child(2) .progress-bar{
+        float: right;
+    }
+}
+/*      Projects      */
+.project{
+    display: table;
+    margin-bottom: 30px;
+}
+.project-description{
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*      Experience      */
+
+
+/*      Contact      */
+
+/*      Footer      */
+footer{
+    padding: 20px;
+}
