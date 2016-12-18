@@ -1,0 +1,27 @@
+{
+  "name": "official-website",
+  "version": "2.0.0",
+  "description": "laurendy's official website",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghiobi/Me.git"
+  },
+  "author": "Laurendy Lam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghiobi/Me/issues"
+  },
+  "homepage": "https://github.com/ghiobi/Me#readme",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-ui-router": "^0.3.2"
+  },
+  "devDependencies": {
+    "html-loader": "^0.4.4",
+    "webpack": "^1.14.0"
+  }
+}

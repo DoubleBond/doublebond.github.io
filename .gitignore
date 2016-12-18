@@ -1,4 +1,7 @@
-.DS_Store
-
-.idea/*
-assets/img/me.psd
+/vendor/
+/Me.iml
+/.idea/
+/public/build/
+/old/
+/node_modules/
+/logs/app.log
