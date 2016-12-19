@@ -15,27 +15,9 @@ function config($locationProvider, $urlRouterProvider, $stateProvider) {
 
   $stateProvider
     .state('home', {
-      url: '',
-      abstract: true,
-      template: require('./templates/layout.html'),
-      controller: require('./controllers/HomeCtrl')
-    })
-    .state('home.about', {
       url: '/',
-      template: '<p>About</p><a href="/skills">link</a>',
-      controller: require('./controllers/AboutCtrl')
-    })
-    .state('home.skills', {
-      url: '/skills',
-      template: '<p>Skills</p><a href="/projects">link</a>'
-    })
-    .state('home.projects', {
-      url: '/projects',
-      template: '<p>Projects</p><a href="/contact">link</a>'
-    })
-    .state('home.contact', {
-      url: '/contact',
-      template: '<p>Contact</p><a href="/">link</a>'
+      template: require('./templates/home.html'),
+      controller: require('./controllers/HomeCtrl')
     });
 
 }

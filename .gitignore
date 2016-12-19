@@ -5,3 +5,5 @@
 /old/
 /node_modules/
 /logs/app.log
+
+!/public/build/images/
