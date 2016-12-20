@@ -5,7 +5,7 @@ function HomeCtrl($rootScope) {
   //***************************************************
   require('particles.js');
   particlesJS.load('particles-js', require('../../assets/particles.json'));
-  console.log('Hi there! Feel free to sniff my code!');
+  console.log('Hi there!');
 
   //***************************************************
   $rootScope.now = new Date();

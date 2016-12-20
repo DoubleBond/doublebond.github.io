@@ -21,7 +21,7 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg|json)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&publicPath=build/&name=[hash].[ext]'
+          'url?hash=sha512&digest=hex&publicPath=build/&name=[hash].[ext]'
         ]
       },
       {

@@ -1,7 +1,8 @@
 AboutCtrl.$inject = ['$scope'];
-require('gsap');
 
 function AboutCtrl($scope) {
+
+  require('gsap');
 
   TweenLite.set('.flip-back', {rotationY: -180});
 

@@ -28,7 +28,7 @@
             <nav class="level">
                 <div class="level-left me-profile">
                     <div class="level-item">
-                        <img class="image" src="https://dummyimage.com/35x35/000/fff" alt="">
+                        <img class="image" src="../../assets/images/icon.png" alt="" width="35">
                     </div>
                     <div class="level-item me-title">
                         <div>LAURENDY <strong>LAM</strong></div>
@@ -62,7 +62,7 @@
                             internship this Summer 2017.</strong> I'm friendly, simple and very self motivated. If you're looking for a
                             skilled full-stack developer or just a funny person, look no further and contact me now.</p>
                         <p>
-                            <button class="button is-primary">DOWNLOAD MY<strong>&nbsp;CV</strong></button>
+                            <a href="/Resume_Laurendy_Lam.pdf" target="_blank" title="Last Updated March 16, 2016" download="" class="button is-primary">DOWNLOAD MY<strong>&nbsp;CV</strong></a>
                         </p>
                     </div>
                 </div>
@@ -193,8 +193,8 @@
                                         BACH. SOFTWARE ENGINEERING
                                     </div>
                                     <div class="description">
-                                        I participate in a Space Club and we are currently developing a commander a satellite probe to
-                                        be rallied against other universities in North America. Additionally, I used to be a graphic design for club CCAS.
+                                        I participate in a Space Club for the development of a satellite to be rallied against
+                                        other universities in North America. Additionally, I used to be a graphic design for club CCAS.
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
                                         HEALTH SCIENCES
                                     </div>
                                     <div class="description">
-                                        Nothing much really happening during the two years of college except for winning 300$ from a
+                                        Nothing really happening during the two years of college except for winning 300$ from a
                                         logo contest as first place.
                                     </div>
                                 </div>
@@ -375,29 +375,43 @@
         <div class="section-title">
             <h1>MY COOL WORK</h1>
         </div>
-        <div class="container" ng-controller="ServiceCtrl">
+        <div class="container" ng-controller="ProjectCtrl">
             <div class="tabs is-toggle is-centered">
-                <ul>
+                <ul class="project-filters">
                     <li class="filter is-active" data-filter="*">
                         <a>All</a>
                     </li>
-                    <li class="filter" data-filter="personal">
+                    <li class="filter" data-filter=".personal">
                         <a>Personal</a>
                     </li>
-                    <li class="filter" data-filter="school">
+                    <li class="filter" data-filter=".school">
                         <a>School</a>
                     </li>
-                    <li class="filter" data-filter="freelance">
+                    <li class="filter" data-filter=".freelance">
                         <a>Freelance</a>
                     </li>
                 </ul>
             </div>
             <div class="projects-grid">
-                <div class="project-item">
+                <div class="project-item personal">
                     <div class="project">
-                        <figure class="image is-4by3">
-                            <img src="http://placehold.it/300x225" alt="">
-                        </figure>
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="http://placehold.it/300x225" alt="">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 class="mb-10">PROJECT NAME</h4>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>.
+                                    <a href="#">#css</a> <a href="#">#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -425,7 +439,7 @@
                                 514-9275582
                             </div>
                         </div>
-                        <div class="contact-info">
+                        <div class="contact-info mb-20">
                             <div>
                                 <i class="fa fa-fw fa-envelope"></i>
                             </div>

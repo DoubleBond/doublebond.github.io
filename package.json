@@ -21,6 +21,7 @@
     "angular-ui-router": "^0.3.2",
     "animate.css": "^3.5.2",
     "gsap": "^1.19.0",
+    "imagesloaded": "^4.1.1",
     "isotope-layout": "^3.0.1",
     "particles.js": "^2.0.0"
   },

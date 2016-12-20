@@ -21,6 +21,9 @@ html, body{
 img{
   vertical-align: middle;
 }
+.card{
+  width: 100%;
+}
 .align-box{
   @include full-hw;
   display: table;
@@ -281,12 +284,18 @@ img{
     width: 55px;
   }
 }
+.projects-grid{
+  margin: 0 -10px;
+}
 .project-item{
   padding: 10px;
   box-sizing: border-box;
-  width: 50%;
+  width: 100%;
+  @media (min-width: 460px) {
+    width: 50%;
+  }
   @media (min-width: 768px) {
-    width: 25%;
+    width: 33%;
   }
   > .project{
     box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
@@ -296,6 +305,7 @@ img{
   background-color: #f9f9f9;
 }
 #contact{
+  border-top: #eee 1px solid;
   .section-title{
     text-align: left;
     margin-bottom: 15px;
@@ -312,8 +322,7 @@ img{
       right: 0;
       width: 50%;
       height: 100%;
-      background-color: #f9f9f9;
-      border-left: solid 1px #DFDFDF;
+      background-color: #f5f5f5;
     }
   }
 }
@@ -345,13 +354,13 @@ img{
     text-align: center;
   }
 }
-@for $i from 0 through 12 {
+@for $i from 0 through 4 {
   .mb-#{$i * 5} {
-    margin-bottom: #{$i * 5}px;
+    margin-bottom: #{$i * 5}px !important;
   }
 }
 @for $i from 2 through 5 {
   .fa-#{$i}x {
-    font-size: #{$i}em;
+    font-size: #{$i}em !important;
   }
 }
