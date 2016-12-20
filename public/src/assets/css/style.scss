@@ -281,14 +281,27 @@ img{
     width: 55px;
   }
 }
+.project-item{
+  padding: 10px;
+  box-sizing: border-box;
+  width: 50%;
+  @media (min-width: 768px) {
+    width: 25%;
+  }
+  > .project{
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  }
+}
 #projects{
   background-color: #f9f9f9;
 }
 #contact{
   .section-title{
     text-align: left;
+    margin-bottom: 15px;
     > h1{
       font-size: 18px;
+      font-weight: 400;
     }
   }
   @media (min-width: 768px) {
@@ -304,9 +317,24 @@ img{
     }
   }
 }
+.contact-info{
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px;
+  > div:first-child{
+    border: #363636 solid 1px;
+    margin-right: 15px;
+    padding: 5px;
+  }
+}
+@media (max-width: 767px){
+  .no-padding-bottom{
+    padding-bottom: 0;
+  }
+}
 @media (min-width: 768px) {
   .contact-box{
-    padding: 15px;
+    padding-left: 15px;
   }
 }
 #footer{

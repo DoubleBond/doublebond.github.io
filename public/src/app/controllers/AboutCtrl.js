@@ -1,6 +1,5 @@
-require('gsap');
-
 AboutCtrl.$inject = ['$scope'];
+require('gsap');
 
 function AboutCtrl($scope) {
 

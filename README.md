@@ -1,3 +1,3 @@
 #Personal Website
 
-Official website. Contains a summary of who I am.
+Contains a summary of who I am. [laurendylam.com](laurendylam.com)

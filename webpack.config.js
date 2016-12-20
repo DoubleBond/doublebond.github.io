@@ -23,6 +23,10 @@ module.exports = {
         loaders: [
           'file?hash=sha512&digest=hex&publicPath=build/&name=[hash].[ext]'
         ]
+      },
+      {
+        test: /isotope\-|fizzy\-ui\-utils|desandro\-|masonry|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+        loader: 'imports?define=>false&this=>window'
       }
     ]
   },

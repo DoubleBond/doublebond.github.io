@@ -14,8 +14,8 @@
                 <h1>Laurendy Lam</h1>
                 <p>Full Stack Engineer</p>
                 <div class="me-social">
-                    <a href=""><i class="fa fa-github-square"></i></a>
-                    <a href=""><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://github.com/ghiobi"><i class="fa fa-github-square"></i></a>
+                    <a href="https://www.linkedin.com/in/lamlaurendy"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
             <img src="../../assets/images/me.png" alt="">
@@ -58,7 +58,7 @@
                             with an ambition in entrepreneurship and look forward to major in large scale web applications.
                         </p>
                         <p class="mb-15">
-                            Currently, I attend Concordia University as a third year student in the Software Eng. Co-op program is <strong>seeking an
+                            Currently, I attend Concordia University as a third year student in the Software Eng. Co-op program and is <strong>seeking an
                             internship this Summer 2017.</strong> I'm friendly, simple and very self motivated. If you're looking for a
                             skilled full-stack developer or just a funny person, look no further and contact me now.</p>
                         <p>
@@ -72,7 +72,7 @@
                             <div class="more-button">
                                 <a href="" ng-click="flip('#card-one')"><i class="fa fa-plus-square"></i></a>
                             </div>
-                            <p class="title"><strong>SKILLED</strong> IN</p>
+                            <p class="title"><strong>SKILLS</strong></p>
                             <p class="subtitle">Flip me!</p>
                             <div class="skill">
                                 <div class="program">
@@ -190,7 +190,7 @@
                                 </div>
                                 <div class="position">
                                     <div class="title">
-                                        SOFTWARE ENGINEERING COOP
+                                        BACH. SOFTWARE ENGINEERING
                                     </div>
                                     <div class="description">
                                         I participate in a Space Club and we are currently developing a commander a satellite probe to
@@ -375,6 +375,33 @@
         <div class="section-title">
             <h1>MY COOL WORK</h1>
         </div>
+        <div class="container" ng-controller="ServiceCtrl">
+            <div class="tabs is-toggle is-centered">
+                <ul>
+                    <li class="filter is-active" data-filter="*">
+                        <a>All</a>
+                    </li>
+                    <li class="filter" data-filter="personal">
+                        <a>Personal</a>
+                    </li>
+                    <li class="filter" data-filter="school">
+                        <a>School</a>
+                    </li>
+                    <li class="filter" data-filter="freelance">
+                        <a>Freelance</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project">
+                        <figure class="image is-4by3">
+                            <img src="http://placehold.it/300x225" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="section" id="contact">
         <div class="container">
@@ -382,28 +409,82 @@
                 <div class="column">
                     <div class="section-title">
                         <h1>CONTACT INFO</h1>
+                        <div class="contact-info">
+                            <div>
+                                <i class="fa fa-fw fa-map-marker"></i>
+                            </div>
+                            <div>
+                                Montreal, Quebec, Canada
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div>
+                                <i class="fa fa-fw fa-phone"></i>
+                            </div>
+                            <div>
+                                514-9275582
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div>
+                                <i class="fa fa-fw fa-envelope"></i>
+                            </div>
+                            <div>
+                                lamlaurendy@gmail.com
+                            </div>
+                        </div>
+                        <div class="me-social">
+                            <a href="https://github.com/ghiobi"><i class="fa fa-github-square"></i></a>
+                            <a href="https://www.linkedin.com/in/lamlaurendy"><i class="fa fa-linkedin-square"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="column">
-                    <div class="contact-box">
-                        <div class="columns" style="margin-bottom: 0">
-                            <div class="column">
-                                <input type="text" class="input" placeholder="First Name">
+                    <div class="contact-box" ng-controller="ContactCtrl">
+                        <h1 class="mb-5">MESSAGE <strong>ME</strong></h1>
+                        <form name="form" novalidate ng-submit="send(form)">
+                            <div class="columns" style="margin-bottom: 0">
+                                <div class="column no-padding-bottom">
+                                    <p class="control has-icon has-icon-right">
+                                        <input type="text" class="input"
+                                               placeholder="Name" name="name"
+                                               ng-model="mail.name" required
+                                               ng-class="{'is-danger': form.name.$invalid && form.name.$dirty}">
+                                        <i class="fa fa-warning" ng-show="form.name.$invalid && form.name.$dirty"></i>
+                                        <span class="help is-danger" ng-show="form.name.$invalid && form.name.$dirty">Your name is required!</span>
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <p class="control has-icon has-icon-right">
+                                        <input type="text" class="input"
+                                               placeholder="Subject" name="subject"
+                                               ng-model="mail.subject" required
+                                               ng-class="{'is-danger': form.subject.$invalid && form.subject.$dirty}">
+                                        <i class="fa fa-warning" ng-show="form.subject.$invalid && form.subject.$dirty"></i>
+                                        <span class="help is-danger" ng-show="form.subject.$invalid && form.subject.$dirty">A subject is required!</span>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="column">
-                                <input type="text" class="input" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <p class="control">
-                            <input type="text" class="input" placeholder="Email">
-                        </p>
-                        <p class="control">
-                            <textarea class="textarea" placeholder="Message"></textarea>
-                        </p>
-                        <p class="control">
-                            <button class="button is-primary">Submit</button>
-                            <button class="button is-link">Cancel</button>
-                        </p>
+                            <p class="control has-icon has-icon-right">
+                                <input type="email" class="input"
+                                       placeholder="Email" name="email"
+                                       ng-model="mail.email" required
+                                       ng-class="{'is-danger': form.email.$invalid && form.email.$dirty}">
+                                <i class="fa fa-warning" ng-show="form.email.$invalid && form.email.$dirty"></i>
+                                <span class="help is-danger" ng-show="form.email.$invalid && form.email.$dirty">Your email is required!</span>
+                            </p>
+                            <p class="control has-icon has-icon-right">
+                                <textarea class="textarea" placeholder="Message"
+                                          name="body" ng-model="mail.body"
+                                          required minlength="6" ng-class="{'is-danger': form.body.$invalid && form.body.$dirty}"></textarea>
+                                <i class="fa fa-warning" ng-show="form.body.$invalid && form.body.$dirty"></i>
+                                <span class="help is-danger" ng-show="form.body.$invalid && form.body.$dirty">Your message needs to be a least 6 chars long!</span>
+                            </p>
+                            <p class="control">
+                                <button class="button is-primary" type="submit">Submit</button>
+                                <button class="button is-link" ng-click="reset(form)" type="reset">Cancel</button>
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>

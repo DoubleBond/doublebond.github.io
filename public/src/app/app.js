@@ -5,9 +5,9 @@ var app = angular.module('app', [
   'ui.router'
 ]).config(config);
 
-config.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];
+config.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider', '$compileProvider'];
 
-function config($locationProvider, $urlRouterProvider, $stateProvider) {
+function config($locationProvider, $urlRouterProvider, $stateProvider, $compileProvider) {
 
   $locationProvider.html5Mode(true);
 
@@ -20,8 +20,13 @@ function config($locationProvider, $urlRouterProvider, $stateProvider) {
       controller: require('./controllers/HomeCtrl')
     });
 
+  $compileProvider.debugInfoEnabled(false);
+  $compileProvider.commentDirectivesEnabled(false);
+
 }
 
 app.controller('AboutCtrl', require('./controllers/AboutCtrl'));
+app.controller('ContactCtrl', require('./controllers/ContactCtrl'));
+app.controller('ServiceCtrl', require('./controllers/ServiceCtrl'));
 
 module.exports = app;
