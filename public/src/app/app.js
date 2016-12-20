@@ -22,4 +22,6 @@ function config($locationProvider, $urlRouterProvider, $stateProvider) {
 
 }
 
+app.controller('AboutCtrl', require('./controllers/AboutCtrl'));
+
 module.exports = app;

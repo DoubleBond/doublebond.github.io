@@ -6,7 +6,7 @@ module.exports = {
   entry: './public/src/main.js',
   output: {
     filename: 'main.js',
-    path: './public/build/js/'
+    path: './public/build/'
   },
   module: {
     loaders: [
@@ -19,10 +19,9 @@ module.exports = {
         loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|json)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'file?hash=sha512&digest=hex&publicPath=build/&name=[hash].[ext]'
         ]
       }
     ]
