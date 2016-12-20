@@ -4,7 +4,7 @@ function HomeCtrl($rootScope) {
 
   //***************************************************
   require('particles.js');
-  particlesJS.load('particles-js', require('../../assets/particles.json'));
+  particlesJS.load('particles-js', 'particles.json');
   console.log('Hi there!');
 
   //***************************************************
