@@ -35,16 +35,6 @@ $app->get('/[{page:.*}]', function ($request, $response, $args) {
     // Sample log message
     $this->logger->info("IP ".$_SERVER['REMOTE_ADDR']." route");
 
-    // Get built js file
-    $files = scandir(__DIR__ . '/../public/build');
-
-    $build = null;
-    foreach ($files as $file){
-        if(substr($file, -2) === 'js'){
-            $build = $file;
-        }
-    }
-
     // Render index view
-    return $this->renderer->render($response, 'index.phtml', compact('build'));
+    return $this->renderer->render($response, 'index.phtml', $args);
 });
