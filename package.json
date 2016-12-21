@@ -23,6 +23,7 @@
     "gsap": "^1.19.0",
     "imagesloaded": "^4.1.1",
     "isotope-layout": "^3.0.1",
+    "jump.js": "^1.0.1",
     "particles.js": "^2.0.0"
   },
   "devDependencies": {

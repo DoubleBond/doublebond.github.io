@@ -5,7 +5,7 @@ var production = JSON.parse(process.env.PROD_ENV || 'false');
 module.exports = {
   entry: './public/src/main.js',
   output: {
-    filename: 'main.js',
+    filename: '[hash].main.js',
     path: './public/build/'
   },
   module: {

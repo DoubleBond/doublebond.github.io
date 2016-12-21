@@ -132,6 +132,7 @@ img{
   perspective: 800px;
   > .flip-card{
     transform-style: preserve-3d;
+    position: relative;
   }
 }
 .flip-{

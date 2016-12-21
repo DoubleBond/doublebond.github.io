@@ -2,32 +2,40 @@ ProjectCtrl.$inject = ['$scope'];
 
 function ProjectCtrl($scope) {
 
+  var grid = null;
   var Isotope = require('isotope-layout');
   var ImagesLoaded = require('imagesloaded/imagesloaded.pkgd.js');
+  var gridElement = document.querySelector('.projects-grid');
 
-  var grid_element = document.querySelector('.projects-grid');
-
-  var grid = null;
-
-  new ImagesLoaded(grid_element, function() {
-    // init Isotope after all images have loaded
-    grid = new Isotope(grid_element, {
+  // init Isotope after all images have loaded
+  new ImagesLoaded(gridElement, function() {
+    grid = new Isotope(gridElement, {
       itemSelector: '.project-item',
       layoutMode: 'masonry'
     });
   });
 
   var filters = document.querySelectorAll('.project-filters > .filter');
-  for(var i = 0; i < filters.length; i++){
-    filters[i].addEventListener('click', function (element) {
-      angular.element(filters).removeClass('is-active');
+  Array.prototype.forEach.call(filters, function (element) {
+    element.addEventListener('click', function (event) {
+      var active = document.querySelector('.project-filters > .filter.is-active');
 
-      var filter = angular.element(element.target.parentElement);
-      filter.addClass('is-active');
+      //Remove active filter class list
+      if (active.classList)
+        active.classList.remove('is-active');
+      else
+        active.className = el.className.replace(new RegExp('(^|\\b)' + 'is-active'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 
-      grid.arrange({ filter: filter.attr('data-filter') });
+      //Add class
+      if (element.classList)
+        element.classList.add('is-active');
+      else
+        element.className += ' is-active';
+
+      grid.arrange({filter: element.getAttribute('data-filter')});
     })
-  }
+  });
+
 }
 
 module.exports = ProjectCtrl;

@@ -36,10 +36,10 @@
                     </div>
                 </div>
                 <div class="level-right">
-                    <a href="" class="level-item is-white button navbar-link">ABOUT</a>
-                    <a href="" class="level-item is-white button navbar-link">SERVICES</a>
-                    <a href="" class="level-item is-white button navbar-link">WORKS</a>
-                    <a href="" class="level-item is-white button navbar-link button is-dark">HIRE ME</a>
+                    <a href="" class="level-item is-white button navbar-link" data-target="#about">ABOUT</a>
+                    <a href="" class="level-item is-white button navbar-link" data-target="#services">SERVICES</a>
+                    <a href="" class="level-item is-white button navbar-link" data-target="#projects">WORKS</a>
+                    <a href="" class="level-item is-white button navbar-link button is-dark" data-target="#contact">HIRE ME</a>
                 </div>
             </nav>
         </div>
@@ -58,7 +58,7 @@
                             with an ambition in entrepreneurship and look forward to major in large scale web applications.
                         </p>
                         <p class="mb-15">
-                            Currently, I attend Concordia University as a third year student in the Software Eng. Co-op program and is <strong>seeking an
+                            Currently, I attend Concordia University as a third year student in the Software Eng. Co-op program and am <strong>seeking an
                             internship this Summer 2017.</strong> I'm friendly, simple and very self motivated. If you're looking for a
                             skilled full-stack developer or just a funny person, look no further and contact me now.</p>
                         <p>
@@ -193,8 +193,8 @@
                                         Bach. of Software Engineering
                                     </div>
                                     <div class="description">
-                                        I participate in a Space Club for the development of a satellite to be rallied against
-                                        other universities in North America. Additionally, I used to be a graphic design for club CCAS.
+                                        I participate in Concordia's Space Club for the development of a satellite. It is going to be rallied against
+                                        other universities in North America. Additionally, I used to be a graphic designer for club CCAS.
                                     </div>
                                 </div>
                             </div>
@@ -212,8 +212,8 @@
                                         Health Sciences
                                     </div>
                                     <div class="description">
-                                        Nothing really happening during the two years of college except for winning 300$ from a
-                                        logo contest as first place.
+                                        Nothing really happened during the two years of college except for winning 300$ as first place from a
+                                        logo contest.
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                                         April 2016 - September 2016
                                     </div>
                                     <div class="location">
-                                        HEYCARSON
+                                        CARSON SHOPIFY
                                     </div>
                                 </div>
                                 <div class="position">
@@ -239,7 +239,7 @@
                                     </div>
                                     <div class="description">
                                         Carson is a Shopify expert company. They work with small jobs provided by merchants from all around the world.
-                                        At Carson, I have performed over 256 job requests and replied to over 1955 customer emails.
+                                        At Carson, I have performed over 255 job requests and replied to over 1955 customer emails.
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +257,7 @@
                                          Lifeguard and Water Quality Technician
                                     </div>
                                     <div class="description">
-                                        As a lifeguard for the city of montreal, I regulated and maintained water quality for pools and the safety of the public.
+                                        As a lifeguard for the city of Montreal, I regulated and maintained water quality for pools and the safety of the public.
                                     </div>
                                 </div>
                             </div>
@@ -299,7 +299,7 @@
                                 <strong>SHOPIFY</strong> STORE TWEAKS
                             </h4>
                             <p class="subtitle is-6">
-                                From HeyCarson, I have developed strong and professional skills to work with
+                                From Carson, I have developed strong and professional skills to work with
                                 Shopify stores. I provide small store front tweaks at a good price.
                             </p>
                         </div>
@@ -312,7 +312,7 @@
                         </div>
                         <div class="media-content">
                             <h4 class="title is-5">
-                                DESIGN <strong>TO</strong> HTML & CSS
+                                FROM DESIGNS <strong>TO</strong> HTML & CSS
                             </h4>
                             <p class="subtitle is-6">
                                 Need to convert your design to HTML and CSS? Let me help!
@@ -332,7 +332,7 @@
                                 GRAPHIC & <strong>LOGO</strong> DESIGN
                             </h4>
                             <p class="subtitle is-6">
-                                I have decent skills for graphic design.
+                                I have decent skills for graphic design. I'm unique, creative and very skilled with Photoshop.
                             </p>
                         </div>
                     </div>
@@ -347,7 +347,7 @@
                                 COMPUTER <strong>REPAIR</strong>
                             </h4>
                             <p class="subtitle is-6">
-                                I repair laptops and desktop. I provide clean and easy service. No fuss.
+                                I repair laptops and desktop as past time. I provide clean and easy service with no fuss.
                                 Depending on the time of the year, I may no offer this.
                             </p>
                         </div>
@@ -363,7 +363,7 @@
                                 <strong>3D</strong> PRINTING
                             </h4>
                             <p class="subtitle is-6">
-                                Need to get some printing done? I may offer some 3D modeling service.
+                                Need to get some printing done? I may offer some 3D modeling.
                             </p>
                         </div>
                     </div>
@@ -495,8 +495,12 @@
                                 <span class="help is-danger" ng-show="form.body.$invalid && form.body.$dirty">Your message needs to be a least 6 chars long!</span>
                             </p>
                             <p class="control">
-                                <button class="button is-primary" type="submit">Submit</button>
-                                <button class="button is-link" ng-click="reset(form)" type="reset">Cancel</button>
+                                <button class="button is-primary" type="submit"
+                                        ng-class="{'is-loading': is_loading }">Submit</button>
+                                <button class="button is-link" ng-click="reset(form)" type="reset"
+                                        ng-class="{'is-disabled': is_loading }">Cancel</button>
+                                <span ng-show="form.$submitted && form.$invalid" class="help is-danger">Please fill in the form!</span>
+                                <span ng-show="! form.$submitted && msg_sent" class="help is-success">Your message has been sent!</span>
                             </p>
                         </form>
                     </div>

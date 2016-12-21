@@ -11,7 +11,7 @@ return [
 
         // Monolog settings
         'logger' => [
-            'name' => 'slim-app',
+            'name' => 'logging',
             'path' => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
