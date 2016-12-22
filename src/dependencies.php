@@ -20,7 +20,14 @@ $container['logger'] = function ($c) {
 
 $container['mail'] = function ($c){
     $mail = new PHPMailer();
-    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->isSMTP();
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    ); // Set mailer to use SMTP
     $mail->Host = getenv('MAIL_HOST');  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = getenv('MAIL_USERNAME');                 // SMTP username

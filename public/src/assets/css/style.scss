@@ -70,7 +70,11 @@ img{
   background: #000;
 }
 #particles-js{
-  @include overlay();
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
 }
 .me-box{
   position: relative;
