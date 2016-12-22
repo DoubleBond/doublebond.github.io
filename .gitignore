@@ -1,4 +1,10 @@
-.DS_Store
+/vendor/
+/Me.iml
+/.idea/
+/public/build/
+/old/
+/node_modules/
+/logs/app.log
 
-.idea/*
-assets/img/me.psd
+!/public/build/images/
+/.env

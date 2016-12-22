@@ -1,0 +1,28 @@
+{
+    "name": "official-website",
+    "description": "laurendy's official website",
+    "keywords": [],
+    "homepage": "http://github.com/ghiobi/Me",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laurendy Lam",
+            "email": "lamlaurendy@gmail.com",
+            "homepage": "http://www.laurendylam.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "^3.1",
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.17",
+        "vlucas/phpdotenv": "^2.4",
+        "phpmailer/phpmailer": "^5.2"
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+	"scripts": {
+        "start": "php -S 0.0.0.0:8080 -t public public/index.php"
+	}
+}
