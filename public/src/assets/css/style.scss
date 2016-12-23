@@ -170,7 +170,7 @@ img{
       transform: rotateY(-180deg);
     }
   }
-  &.flipped {
+  &:hover {
     > .flip-front{
       z-index: 0;
       transform: rotateY(180deg);
