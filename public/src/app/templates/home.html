@@ -4,7 +4,7 @@
         <div>
             <img src="../../assets/images/bulb.png" alt="">
             <div class="glow">
-                <img class="animated pulse infinite" src="../../assets/images/glow.png" alt="">
+                <img src="../../assets/images/glow.png" alt="">
             </div>
         </div>
     </div>
@@ -66,14 +66,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="tile is-parent is-6 flip-wrap" ng-mouseenter="jolt('#card-one')">
-                    <div class="tile is-child notification flip-card" id="card-one">
-                        <div class="flip-front is-grey">
-                            <div class="more-button">
-                                <a href="" ng-click="flip('#card-one')"><i class="fa fa-plus-square"></i></a>
-                            </div>
+                <div class="tile is-parent is-6">
+                    <div class="tile is-child flip-card" id="card-one" ng-mouseenter="flip('#card-one')" ng-mouseleave="flip('#card-one')">
+                        <div class="flip-front notification">
                             <p class="title"><strong>SKILLS</strong></p>
-                            <p class="subtitle">Flip me!</p>
+                            <p class="subtitle">Hover me!</p>
                             <div class="skill">
                                 <div class="program">
                                     <div class="program-bar" style="width: 95%">
@@ -118,55 +115,50 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flip-back">
-                            <div class="notification">
-                                <div class="more-button">
-                                    <a href="" ng-click="flip('#card-one')"><i class="fa fa-minus-square"></i></a>
+                        <div class="flip-back notification">
+                            <p class="title"><strong>WEB</strong> TOOLS</p>
+                            <p class="subtitle" style="font-size: 12px">Familiar with Liquid, MySQL, NPM, Grunt, Gulp, Webpack, Bower,
+                                Composer, Gems, PIP, and more.</p>
+                            <div class="skill">
+                                <div class="program">
+                                    <div class="program-bar" style="width: 95%">
+                                        <span>BOOTSTRAP V3 | V4</span>
+                                    </div>
                                 </div>
-                                <p class="title"><strong>WEB</strong> TOOLS</p>
-                                <p class="subtitle" style="font-size: 12px">Familiar with Liquid, MySQL, NPM, Grunt, Gulp, Webpack, Bower,
-                                    Composer, Gems, PIP, and more.</p>
-                                <div class="skill">
-                                    <div class="program">
-                                        <div class="program-bar" style="width: 95%">
-                                            <span>BOOTSTRAP V3 | V4</span>
-                                        </div>
+                                <div class="program">
+                                    <div class="program-bar" style="width: 90%">
+                                        <span>JQUERY | ANGULARJS</span>
                                     </div>
-                                    <div class="program">
-                                        <div class="program-bar" style="width: 90%">
-                                            <span>JQUERY | ANGULARJS</span>
-                                        </div>
+                                </div>
+                                <div class="program">
+                                    <div class="program-bar" style="width: 85%">
+                                        <span>CODEIGNITER</span>
                                     </div>
-                                    <div class="program">
-                                        <div class="program-bar" style="width: 85%">
-                                            <span>CODEIGNITER</span>
-                                        </div>
+                                </div>
+                                <div class="program">
+                                    <div class="program-bar" style="width: 75%">
+                                        <span>LARAVEL</span>
                                     </div>
-                                    <div class="program">
-                                        <div class="program-bar" style="width: 75%">
-                                            <span>LARAVEL</span>
-                                        </div>
+                                </div>
+                                <div class="program">
+                                    <div class="program-bar" style="width: 45%">
+                                        <span>EXPRESSJS</span>
                                     </div>
-                                    <div class="program">
-                                        <div class="program-bar" style="width: 45%">
-                                            <span>EXPRESSJS</span>
-                                        </div>
+                                </div>
+                                <div class="program">
+                                    <div class="program-bar" style="width: 35%">
+                                        <span>REACTJS | RAILS</span>
                                     </div>
-                                    <div class="program">
-                                        <div class="program-bar" style="width: 35%">
-                                            <span>REACTJS | RAILS</span>
-                                        </div>
+                                </div>
+                                <div class="indicator">
+                                    <div style="width: 33%">
+                                        <span>learning</span>
                                     </div>
-                                    <div class="indicator">
-                                        <div style="width: 33%">
-                                            <span>learning</span>
-                                        </div>
-                                        <div style="width: 33%">
-                                            <span>need docs</span>
-                                        </div>
-                                        <div style="width: 33%">
-                                            <span>fluent</span>
-                                        </div>
+                                    <div style="width: 33%">
+                                        <span>need docs</span>
+                                    </div>
+                                    <div style="width: 33%">
+                                        <span>fluent</span>
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +264,7 @@
             <h1>WHAT I DO</h1>
         </div>
         <div class="container">
-            <div class="columns">
+            <div class="columns amaze" data-animation="fadeInUp">
                 <div class="column is-4">
                     <div class="media">
                         <div class="media-left">
@@ -321,7 +313,7 @@
                     </div>
                 </div>
             </div>
-            <div class="columns">
+            <div class="columns amaze" data-animation="fadeInUp">
                 <div class="column is-4">
                     <div class="media">
                         <div class="media-left">

@@ -61,6 +61,21 @@ img{
     left: 0;
     right: 0;
     z-index: 0;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 1.15, 1.15);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
   }
 }
 .full-hw{
@@ -132,23 +147,38 @@ img{
     }
   }
 }
-.flip-wrap{
+.flip-card{
+  position: relative;
+  transform-style: preserve-3d;
   perspective: 800px;
-  > .flip-card{
-    transform-style: preserve-3d;
-    position: relative;
+  > .flip-{
+    &back, &front {
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      height: 100%;
+      width: 100%;
+      transition: all 1.2s cubic-bezier(0.415, -0.580, 0.535, 1.650);
+    }
+    &front{
+      position: absolute;
+      z-index: 1;
+      transform: rotateY(0deg);
+    }
+    &back{
+      position: relative;
+      z-index: 0;
+      transform: rotateY(-180deg);
+    }
   }
-}
-.flip-{
-  &back, &front {
-    backface-visibility: hidden;
-  }
-  &back{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  &.flipped {
+    > .flip-front{
+      z-index: 0;
+      transform: rotateY(180deg);
+    }
+    > .flip-back{
+      z-index: 1;
+      transform: rotateY(0deg);
+    }
   }
 }
 .me-profile{
@@ -271,11 +301,6 @@ img{
     border-bottom: dotted 1px #363636;
     padding-bottom: 2px;
   }
-}
-.more-button{
-  position: absolute;
-  top: 16px;
-  right: 20px;
 }
 #about{
   background-color: #f9f9f9;
