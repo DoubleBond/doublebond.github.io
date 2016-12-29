@@ -62,7 +62,7 @@
                             internship this Summer 2017.</strong> I'm friendly, simple and very self motivated. If you're looking for a
                             skilled full-stack developer or just a funny person, look no further and contact me now.</p>
                         <p>
-                            <a href="/Resume_Laurendy_Lam.pdf" target="_blank" title="Last Updated March 16, 2016" download="" class="button is-primary">DOWNLOAD MY<strong>&nbsp;CV</strong></a>
+                            <a href="Resume_Laurendy_Lam.pdf" target="_blank" title="Last Update December 31, 2016" download="" class="button is-primary">DOWNLOAD MY<strong>&nbsp;CV</strong></a>
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="tile is-child flip-card" id="card-one">
                         <div class="flip-front notification">
                             <p class="title"><strong>SKILLS</strong></p>
-                            <p class="subtitle">Hover me!</p>
+                            <p class="subtitle" style="font-size: 14px">Being a quick learner helps a lot pick up all these skills. Hover this to show web tools I use.</p>
                             <div class="skill">
                                 <div class="program">
                                     <div class="program-bar" style="width: 95%">
@@ -117,8 +117,8 @@
                         </div>
                         <div class="flip-back notification">
                             <p class="title"><strong>WEB</strong> TOOLS</p>
-                            <p class="subtitle" style="font-size: 12px">Familiar with Liquid, MySQL, NPM, Grunt, Gulp, Webpack, Bower,
-                                Composer, Gems, PIP, and more.</p>
+                            <p class="subtitle" style="font-size: 14px">Familiar with Liquid, MySQL, NPM, Grunt, Gulp, Webpack, Bower,
+                                Composer, Gems, and PIP.</p>
                             <div class="skill">
                                 <div class="program">
                                     <div class="program-bar" style="width: 95%">
@@ -264,7 +264,7 @@
             <h1>WHAT I DO</h1>
         </div>
         <div class="container">
-            <div class="columns amaze" data-animation="fadeInUp">
+            <div class="columns">
                 <div class="column is-4">
                     <div class="media">
                         <div class="media-left">
@@ -313,7 +313,7 @@
                     </div>
                 </div>
             </div>
-            <div class="columns amaze" data-animation="fadeInUp">
+            <div class="columns">
                 <div class="column is-4">
                     <div class="media">
                         <div class="media-left">
@@ -339,7 +339,7 @@
                                 COMPUTER <strong>REPAIR</strong>
                             </h4>
                             <p class="subtitle is-6">
-                                I repair laptops and desktop as past time. I provide clean and easy service with no fuss.
+                                I repair laptops and desktop as a past time. I provide clean and easy service with no fuss.
                                 Depending on the time of the year, I may no offer this.
                             </p>
                         </div>
@@ -385,22 +385,20 @@
                 </ul>
             </div>
             <div class="projects-grid">
-                <div class="project-item personal">
+                <div class="project-item {{ project.filter }}" ng-repeat="project in projects">
                     <div class="project">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="http://placehold.it/300x225" alt="">
+                                    <img ng-src="{{ project.image }}" alt="">
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <h4 class="mb-10">PROJECT NAME</h4>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>.
-                                    <a href="#">#css</a> <a href="#">#responsive</a>
+                                    <h4 class="mb-10" ng-bind="project.title"></h4>
+                                    <span ng-bind-html="project.description"></span>
                                     <br>
-                                    <small>11:09 PM - 1 Jan 2016</small>
+                                    <small ng-bind="project.date"></small>
                                 </div>
                             </div>
                         </div>
@@ -502,7 +500,8 @@
     </div>
     <footer id="footer">
         <div class="container">
-            <p>Copyright &copy <span ng-bind="now.getFullYear()"></span> | All rights reserved | Made with &hearts;</p>
+            <p>Copyright &copy <span ng-bind="now.getFullYear()"></span> | All rights reserved | Made with <a
+                    href="https://github.com/ghiobi/Me">&hearts;</a></p>
         </div>
     </footer>
 </div>
