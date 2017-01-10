@@ -25,7 +25,6 @@ function config($locationProvider, $urlRouterProvider, $stateProvider, $compileP
 
 }
 
-app.controller('AboutCtrl', require('./controllers/AboutCtrl'));
 app.controller('ContactCtrl', require('./controllers/ContactCtrl'));
 app.controller('ProjectCtrl', require('./controllers/ProjectCtrl'));
 

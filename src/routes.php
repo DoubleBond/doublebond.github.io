@@ -10,10 +10,10 @@ $app->group('/api', function (){
         $this->mail->setFrom('hello@laurendylam.com', $param['name']);
         $this->mail->addAddress('lamlaurendy@gmail.com', 'Laurendy Lam');
         $this->mail->addReplyTo($param['email'], $param['name']);
-        $this->mail->isHTML(false);
+        $this->mail->isHTML(true);
 
         $this->mail->Subject = $param['subject'];
-        $this->mail->Body    = htmlspecialchars($param['body']);
+        $this->mail->Body    = $param['body'];
 
         $status = null;
         $message = null;

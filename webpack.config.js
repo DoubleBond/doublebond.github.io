@@ -19,9 +19,9 @@ module.exports = {
         loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(jpe?g|png|gif|svg|json)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'url?hash=sha512&digest=hex&publicPath=build/&name=[hash].[ext]'
+          'file?hash=sha512&digest=hex&publicPath=build/&name=[hash].[ext]'
         ]
       },
       {
