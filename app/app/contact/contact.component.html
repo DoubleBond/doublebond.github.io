@@ -1,0 +1,91 @@
+<div class="section" id="contact">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="section-title">
+          <h1>CONTACT INFO</h1>
+          <div class="contact-info">
+            <div>
+              <i class="fa fa-fw fa-map-marker"></i>
+            </div>
+            <div>
+              Montreal, Quebec, Canada
+            </div>
+          </div>
+          <div class="contact-info">
+            <div>
+              <i class="fa fa-fw fa-phone"></i>
+            </div>
+            <div>
+              514-9275582
+            </div>
+          </div>
+          <div class="contact-info mb-20">
+            <div>
+              <i class="fa fa-fw fa-envelope"></i>
+            </div>
+            <div>
+              lamlaurendy@gmail.com
+            </div>
+          </div>
+          <div class="me-social">
+            <a href="https://github.com/ghiobi"><i class="fa fa-github-square"></i></a>
+            <a href="https://www.linkedin.com/in/lamlaurendy"><i class="fa fa-linkedin-square"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="contact-box" ng-controller="ContactCtrl">
+          <h1 class="mb-5">MESSAGE <strong>ME</strong></h1>
+          <form name="form" novalidate ng-submit="send(form)">
+            <div class="columns" style="margin-bottom: 0">
+              <div class="column no-padding-bottom">
+                <p class="control has-icon has-icon-right">
+                  <input type="text" class="input"
+                         placeholder="Name" name="name"
+                         ng-model="mail.name" required
+                         ng-class="{'is-danger': form.name.$invalid && form.name.$dirty}">
+                  <i class="fa fa-warning" ng-show="form.name.$invalid && form.name.$dirty"></i>
+                  <span class="help is-danger" ng-show="form.name.$invalid && form.name.$dirty">Your name is required!</span>
+                </p>
+              </div>
+              <div class="column">
+                <p class="control has-icon has-icon-right">
+                  <input type="text" class="input"
+                         placeholder="Subject" name="subject"
+                         ng-model="mail.subject" required
+                         ng-class="{'is-danger': form.subject.$invalid && form.subject.$dirty}">
+                  <i class="fa fa-warning" ng-show="form.subject.$invalid && form.subject.$dirty"></i>
+                  <span class="help is-danger" ng-show="form.subject.$invalid && form.subject.$dirty">A subject is required!</span>
+                </p>
+              </div>
+            </div>
+            <p class="control has-icon has-icon-right">
+              <input type="email" class="input"
+                     placeholder="Email" name="email"
+                     ng-model="mail.email" required
+                     ng-class="{'is-danger': form.email.$invalid && form.email.$dirty}">
+              <i class="fa fa-warning" ng-show="form.email.$invalid && form.email.$dirty"></i>
+              <span class="help is-danger" ng-show="form.email.$invalid && form.email.$dirty">Your email is required!</span>
+            </p>
+            <p class="control has-icon has-icon-right">
+                                <textarea class="textarea" placeholder="Message"
+                                          name="body" ng-model="mail.body"
+                                          required minlength="6" ng-class="{'is-danger': form.body.$invalid && form.body.$dirty}"></textarea>
+              <i class="fa fa-warning" ng-show="form.body.$invalid && form.body.$dirty"></i>
+              <span class="help is-danger" ng-show="form.body.$invalid && form.body.$dirty">Your message needs to be a least 6 chars long!</span>
+            </p>
+            <p class="control">
+              <button class="button is-primary" type="submit"
+                      ng-class="{'is-loading': is_loading }">Submit</button>
+              <button class="button is-link" ng-click="reset(form)" type="reset"
+                      ng-class="{'is-disabled': is_loading }">Cancel</button>
+              <span ng-show="form.$submitted && form.$invalid" class="help is-danger">Please fill in the form!</span>
+              <span ng-show="! form.$submitted && msg_sent" class="help is-success">Your message has been sent!</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

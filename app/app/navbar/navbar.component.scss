@@ -1,0 +1,36 @@
+.me-profile{
+  img{
+    border-radius: 50%;
+  }
+  > .me-title{
+    display: block;
+    > div:first-child{
+      font-size: 125%;
+    }
+    > div:last-child{
+      font-size: 90%;
+    }
+  }
+  display: flex;
+  @media (max-width: 767px){
+    justify-content: center;
+    align-items: baseline;
+  }
+}
+.navbar{
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  .level-right{
+    > .navbar-link{
+      margin-left: 15px;
+    }
+    @media (max-width: 767px){
+      display: flex;
+      justify-content: center;
+      > .navbar-link{
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+$primary: #00d1b2;
+
+@mixin overlay() {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@mixin full-hw() {
+  height: 100%;
+  width: 100%;
+}

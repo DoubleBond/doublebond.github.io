@@ -36,5 +36,6 @@ $app->get('/[{page:.*}]', function ($request, $response, $args) {
     $this->logger->info("IP ".$_SERVER['REMOTE_ADDR']." route");
 
     // Render index view
-    return $this->renderer->render($response, 'index.phtml', $args);
+    $response->getBody()->write(file_get_contents(__DIR__  . '/../public/dist/index.html'));
+    return $response;
 });

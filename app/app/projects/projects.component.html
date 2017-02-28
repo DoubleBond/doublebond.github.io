@@ -1,0 +1,44 @@
+<div class="section" id="projects">
+  <div class="section-title">
+    <h1>MY COOL WORKS</h1>
+  </div>
+  <div class="container" ng-controller="ProjectCtrl">
+    <div class="tabs is-toggle is-centered">
+      <ul class="project-filters">
+        <li class="filter is-active" data-filter="*">
+          <a>All</a>
+        </li>
+        <li class="filter" data-filter=".personal">
+          <a>Personal</a>
+        </li>
+        <li class="filter" data-filter=".school">
+          <a>School</a>
+        </li>
+        <li class="filter" data-filter=".freelance">
+          <a>Freelance</a>
+        </li>
+      </ul>
+    </div>
+    <div class="projects-grid">
+      <div class="project-item {{ project.filter }}" *ngFor="let project of projects">
+        <div class="project">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <img [src]="project.image" alt="">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4 class="mb-10">{{ project.title }}</h4>
+                <span>{{ project.description }}</span>
+                <br>
+                <small>{{ project.date }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
