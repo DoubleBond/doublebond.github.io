@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    particlesJS.load('particles-js', './../../../assets/particles.json');
+    particlesJS.load('particles-js', 'assets/particles.json');
   }
 
 }
