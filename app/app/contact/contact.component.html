@@ -5,7 +5,7 @@
         <div class="section-title">
           <h1>CONTACT INFO</h1>
           <div class="contact-info">
-            <div>
+            <div class="icon">
               <i class="fa fa-fw fa-map-marker"></i>
             </div>
             <div>
@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="contact-info">
-            <div>
+            <div class="icon">
               <i class="fa fa-fw fa-phone"></i>
             </div>
             <div>
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="contact-info mb-20">
-            <div>
+            <div class="icon">
               <i class="fa fa-fw fa-envelope"></i>
             </div>
             <div>
@@ -35,54 +35,69 @@
         </div>
       </div>
       <div class="column">
-        <div class="contact-box" ng-controller="ContactCtrl">
+        <div class="contact-box">
           <h1 class="mb-5">MESSAGE <strong>ME</strong></h1>
-          <form name="form" novalidate ng-submit="send(form)">
+          <form novalidate (ngSubmit)="message()" [formGroup]="form">
             <div class="columns" style="margin-bottom: 0">
               <div class="column no-padding-bottom">
                 <p class="control has-icon has-icon-right">
                   <input type="text" class="input"
-                         placeholder="Name" name="name"
-                         ng-model="mail.name" required
-                         ng-class="{'is-danger': form.name.$invalid && form.name.$dirty}">
-                  <i class="fa fa-warning" ng-show="form.name.$invalid && form.name.$dirty"></i>
-                  <span class="help is-danger" ng-show="form.name.$invalid && form.name.$dirty">Your name is required!</span>
+                         placeholder="Name"
+                         formControlName="name"
+                         [ngClass]="{'is-danger': form.get('name').invalid && form.get('name').dirty }">
+                  <span class="icon is-small" *ngIf="form.get('name').invalid && form.get('name').dirty">
+                    <i class="fa fa-warning"></i>
+                  </span>
+                  <span class="help is-danger" *ngIf="form.get('name').invalid && form.get('name').dirty">Your name is required!</span>
                 </p>
               </div>
               <div class="column">
                 <p class="control has-icon has-icon-right">
                   <input type="text" class="input"
                          placeholder="Subject" name="subject"
-                         ng-model="mail.subject" required
-                         ng-class="{'is-danger': form.subject.$invalid && form.subject.$dirty}">
-                  <i class="fa fa-warning" ng-show="form.subject.$invalid && form.subject.$dirty"></i>
-                  <span class="help is-danger" ng-show="form.subject.$invalid && form.subject.$dirty">A subject is required!</span>
+                         formControlName="subject"
+                         [ngClass]="{'is-danger': form.get('subject').invalid && form.get('subject').dirty}">
+                  <span class="icon is-small" *ngIf="form.get('subject').invalid && form.get('subject').dirty">
+                    <i class="fa fa-warning"></i>
+                  </span>
+                  <span class="help is-danger" *ngIf="form.get('subject').invalid && form.get('subject').dirty">A subject is required!</span>
                 </p>
               </div>
             </div>
-            <p class="control has-icon has-icon-right">
-              <input type="email" class="input"
-                     placeholder="Email" name="email"
-                     ng-model="mail.email" required
-                     ng-class="{'is-danger': form.email.$invalid && form.email.$dirty}">
-              <i class="fa fa-warning" ng-show="form.email.$invalid && form.email.$dirty"></i>
-              <span class="help is-danger" ng-show="form.email.$invalid && form.email.$dirty">Your email is required!</span>
-            </p>
-            <p class="control has-icon has-icon-right">
+            <div class="field">
+              <p class="control has-icon has-icon-right">
+                <input type="email" class="input"
+                       placeholder="Email" name="email"
+                       formControlName="email"
+                       [ngClass]="{'is-danger': form.get('email').invalid && form.get('email').touched}">
+                <span class="icon is-small" *ngIf="form.get('email').invalid && form.get('email').touched">
+                  <i class="fa fa-warning"></i>
+                </span>
+                <span class="help is-danger" *ngIf="form.get('email').invalid && form.get('email').touched">Your email is required!</span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icon has-icon-right">
                                 <textarea class="textarea" placeholder="Message"
-                                          name="body" ng-model="mail.body"
-                                          required minlength="6" ng-class="{'is-danger': form.body.$invalid && form.body.$dirty}"></textarea>
-              <i class="fa fa-warning" ng-show="form.body.$invalid && form.body.$dirty"></i>
-              <span class="help is-danger" ng-show="form.body.$invalid && form.body.$dirty">Your message needs to be a least 6 chars long!</span>
-            </p>
-            <p class="control">
-              <button class="button is-primary" type="submit"
-                      ng-class="{'is-loading': is_loading }">Submit</button>
-              <button class="button is-link" ng-click="reset(form)" type="reset"
-                      ng-class="{'is-disabled': is_loading }">Cancel</button>
-              <span ng-show="form.$submitted && form.$invalid" class="help is-danger">Please fill in the form!</span>
-              <span ng-show="! form.$submitted && msg_sent" class="help is-success">Your message has been sent!</span>
-            </p>
+                                          name="body" formControlName="body"
+                                          [ngClass]="{'is-danger': form.get('body').invalid && form.get('body').dirty}"></textarea>
+                <span class="icon is-small" *ngIf="form.get('body').invalid && form.get('body').dirty">
+                <i class="fa fa-warning"></i>
+              </span>
+                <span class="help is-danger" *ngIf="form.get('body').invalid && form.get('body').dirty">Your message needs to be a least 6 chars long!</span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button class="button is-primary" type="submit"
+                        [ngClass]="{'is-loading': is_loading }" [disabled]="form.invalid">Submit</button>
+                <button class="button is-link" (click)="form.reset(); submitted = false" type="reset"
+                        [ngClass]="{'is-disabled': is_loading }">Cancel</button>
+                <span *ngIf="submitted && form.invalid && form.dirty" class="help is-danger">Please fill in the form!</span>
+                <span *ngIf="submitted && success" class="help is-success">Your message has been sent!</span>
+                <span *ngIf="submitted && !success" class="help is-danger">Oops! Something went wrong. Please try to email me.</span>
+              </p>
+            </div>
           </form>
         </div>
       </div>

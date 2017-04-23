@@ -12,14 +12,14 @@
   padding: 10px;
   box-sizing: border-box;
   width: 100%;
-  @media (min-width: 460px) {
+  @media (min-width: 560px) {
     width: 50%;
   }
   @media (min-width: 768px) {
     width: 33%;
   }
-  > .project {
-    box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+  > .project > .card {
+    box-shadow: none;
   }
 }
 
@@ -29,9 +29,5 @@
     display: inline-block;
     margin-right: 3px;
     border-bottom: none;
-  }
-  .fa {
-    font-size: inherit;
-    vertical-align: baseline;
   }
 }

@@ -10,8 +10,45 @@
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700" rel="stylesheet">
 
+  <style type="text/css">
+    .loading,.loading-wrap{bottom:0;left:0;right:0}.loading-wrap{position:fixed;top:0;z-index:1000}.loading,.loading-section{position:absolute;top:0;height:100%}.loading{display:table;width:100%;z-index:1001;color:#fff}.loading-align{display:table-cell;text-align:center;vertical-align:middle}.loading-section{width:51%;background-color:#0e1217}.loading-left{left:0}.loading-right{right:0}.is-loaded .loading{opacity:0;webkit-transition:all .8s 1s ease-in;transition:all .8s 1s ease-in}.is-loaded .loading-left,.is-loaded .loading-right{width:0;webkit-transition:all .8s 1.8s cubic-bezier(.645,.045,.355,1);transition:all .8s 1.8s cubic-bezier(.645,.045,.355,1)}.is-loaded .loading-wrap{visibility:hidden;webkit-transition:all 0s 2.6s ease-in;transition:all 0s 2.6s ease-in}
+  </style>
+
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <div class="loading-wrap">
+    <div class="loading">
+      <div class="loading-align">
+        <img src="assets/loader.gif">
+        <p>LOADING...</p>
+      </div>
+    </div>
+    <div class="loading-section loading-left"></div>
+    <div class="loading-section loading-right"></div>
+  </div>
+  <app-root></app-root>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+  <script>
+    window.onload = function (){
+      var body = document.querySelector('body');
+      var loading = document.querySelector('.loading-wrap');
+      if (body.classList) {
+        body.classList.add('is-loaded');
+      } else {
+        body.className += ' is-loaded';
+      }
+      setTimeout(function () {
+        loading.parentNode.removeChild(loading);
+      }, 2600);
+    }
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-75624484-2', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>
