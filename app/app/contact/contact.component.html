@@ -95,7 +95,7 @@
                         [ngClass]="{'is-disabled': is_loading }">Cancel</button>
                 <span *ngIf="submitted && form.invalid && form.dirty" class="help is-danger">Please fill in the form!</span>
                 <span *ngIf="submitted && success" class="help is-success">Your message has been sent!</span>
-                <span *ngIf="submitted && !success" class="help is-danger">Oops! Something went wrong. Please try to email me.</span>
+                <span *ngIf="submitted && ! is_loading && ! success" class="help is-danger">Oops! Something went wrong. Please try to email at lamlaurendy@gmail.com.</span>
               </p>
             </div>
           </form>
