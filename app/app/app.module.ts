@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MasonryModule } from 'angular2-masonry';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    MasonryModule
+    MasonryModule,
+    Ng2PageScrollModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
