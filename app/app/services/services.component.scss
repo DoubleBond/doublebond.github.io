@@ -1,0 +1,11 @@
+@import "../../variables";
+
+#services{
+  background-color: $primary;
+  .column{
+    margin-bottom: 20px;
+  }
+  .media-left{
+    width: 55px;
+  }
+}

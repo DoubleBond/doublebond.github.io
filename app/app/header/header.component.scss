@@ -1,0 +1,105 @@
+@import "../../variables";
+
+.header {
+  background: #000;
+}
+
+.bulb {
+  text-align: center;
+  position: absolute;
+  @media (max-width: 767px) {
+    top: -110px;
+  }
+  > div {
+    display: inline-block;
+    position: relative;
+    > img {
+      max-width: 230px;
+      z-index: 1;
+    }
+  }
+}
+
+.glow {
+  @include overlay();
+  > img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 1.15, 1.15);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.align-box {
+  @include full-hw;
+  display: table;
+}
+
+.align-bottom {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.align-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.me-box {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  > div {
+    margin-bottom: 15px;
+    > h1 {
+      font-size: 24px;
+    }
+  }
+  > img {
+    max-width: 240px;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+      max-width: 200px;
+    }
+  }
+  @media (min-width: 768px) {
+    > img, > div {
+      display: inline-block;
+    }
+    > div {
+      margin-bottom: 0;
+      margin-right: 60px;
+      text-align: left;
+    }
+  }
+}
+
+.me-social {
+  margin-top: 5px;
+  > a {
+    margin: 0 2px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}

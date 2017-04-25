@@ -1,0 +1,44 @@
+:host{
+  position: sticky;
+  display: block;
+  top: 0;
+  z-index: 1;
+}
+
+.me-profile{
+  display: flex;
+  img{
+    border-radius: 50%;
+  }
+  > .me-title{
+    display: block;
+    > div:first-child{
+      font-size: 125%;
+    }
+    > div:last-child{
+      font-size: 90%;
+    }
+  }
+  @media (max-width: 767px){
+    justify-content: center;
+    align-items: center;
+  }
+}
+.navbar{
+  background: #fff;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 0 4px rgba(0,0,0,.14);
+  .level-right{
+    > .navbar-link{
+      margin-left: 15px;
+    }
+    @media (max-width: 767px){
+      display: flex;
+      justify-content: center;
+      > .navbar-link{
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@import "~bulma";
+@import "variables";
+
+html {
+  background-color: #fff;
+}
+
+html, body {
+  font-family: 'Raleway', sans-serif;
+  @include full-hw();
+}
+
+img {
+  vertical-align: middle;
+}
+
+.card {
+  width: 100%;
+}
+
+.full-hw {
+  @include full-hw();
+}
+
+#particles-js {
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.section {
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title > h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  &:before {
+    content: " ";
+    width: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: #363636 solid 1px;
+    border-bottom: #363636 solid 1px;
+    height: 7px;
+  }
+  &:after {
+    content: " ";
+    width: 100%;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 1px;
+    background-color: #363636;
+  }
+}
+
+@media (max-width: 767px) {
+  .no-padding-bottom {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-box {
+    padding-left: 15px;
+  }
+}
+
+@for $i from 0 through 4 {
+  .mb-#{$i * 5} {
+    margin-bottom: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 2 through 5 {
+  .fa-#{$i}x {
+    font-size: #{$i}em !important;
+  }
+}
+
+.project .fa {
+  vertical-align: baseline;
+}
