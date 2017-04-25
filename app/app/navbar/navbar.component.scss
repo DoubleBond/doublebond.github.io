@@ -1,3 +1,10 @@
+:host{
+  position: sticky;
+  display: block;
+  top: 0;
+  z-index: 1;
+}
+
 .me-profile{
   display: flex;
   img{
@@ -20,7 +27,8 @@
 .navbar{
   background: #fff;
   padding: 10px;
-  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  position: relative;
+  box-shadow: 0 0 4px rgba(0,0,0,.14);
   .level-right{
     > .navbar-link{
       margin-left: 15px;

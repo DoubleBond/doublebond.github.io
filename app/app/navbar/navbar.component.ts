@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  pageScrollOffset: number = 70;
+
   constructor() { }
 
   ngOnInit() {
