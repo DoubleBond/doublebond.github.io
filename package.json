@@ -1,55 +1,47 @@
 {
-  "name": "me-v3",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod -bh /dist/ -d /dist/",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "name": "gatsby-starter-default",
   "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@angular/common": "^4.0.3",
-    "@angular/compiler": "^4.0.3",
-    "@angular/core": "^4.0.3",
-    "@angular/forms": "^4.0.3",
-    "@angular/http": "^4.0.3",
-    "@angular/platform-browser": "^4.0.3",
-    "@angular/platform-browser-dynamic": "^4.0.3",
-    "@angular/router": "^4.0.3",
-    "angular2-masonry": "^0.4.0",
-    "bulma": "^0.4.0",
-    "core-js": "^2.4.1",
-    "font-awesome": "^4.7.0",
-    "isotope-layout": "^3.0.3",
-    "ng2-page-scroll": "^4.0.0-beta.7",
-    "particles.js": "^2.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "bulma": "^0.7.5",
+    "gatsby": "^2.13.73",
+    "gatsby-image": "^2.2.10",
+    "gatsby-plugin-manifest": "^2.2.6",
+    "gatsby-plugin-offline": "^2.2.7",
+    "gatsby-plugin-react-helmet": "^3.1.4",
+    "gatsby-plugin-sass": "^2.1.12",
+    "gatsby-plugin-sharp": "^2.2.13",
+    "gatsby-source-filesystem": "^2.1.11",
+    "gatsby-transformer-sharp": "^2.2.7",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0",
-    "@angular/compiler-cli": "^4.0.3",
-    "@angularclass/hmr": "^1.2.2",
-    "@types/core-js": "^0.9.37",
-    "@types/jasmine": "2.5.47",
-    "@types/node": "^7.0.8",
-    "codelyzer": "~3.0.0-beta.3",
-    "jasmine-core": "~2.5.2",
-    "jasmine-spec-reporter": "~4.0.0",
-    "karma": "~1.6.0",
-    "karma-chrome-launcher": "~2.0.0",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.2.0",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "loader-utils": "^1.1.0",
-    "protractor": "~5.1.0",
-    "ts-node": "~3.0.2",
-    "tslint": "~5.1.0",
-    "typescript": "~2.2.1"
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build --prefix-paths && rimraf ./docs && node build.js",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

@@ -1,3 +1,3 @@
-#Personal Website
+# Personal Website
 
-Contains a summary of who I am. [laurendylam.com](http://laurendylam.com/)
+Contains a summary of who I am and what I love. [laurendylam.com](http://laurendylam.com/)
